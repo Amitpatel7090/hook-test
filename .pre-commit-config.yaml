@@ -1,9 +1,8 @@
 repos:
-- repo: local
-  hooks:
-  - id: check-commit-message-case
-    name: Check Commit Message Case
-    entry: bash -c '! [[ $(git log -1 --pretty=%B) =~ ^[a-z] ]]'
-    language: system
-    types: [commit-msg]
-    exclude: '^[a-z]+$'  # Exclude commits with lowercase messages
+-   repo: local
+    hooks:
+    -   id: check-commit-message-case
+        name: Check Commit Message Case
+        entry: bash -c '! [[ "$(git log -1 --pretty=%B)" =~ ^[a-z] ]]'
+        language: system
+        types: [commit-msg]
